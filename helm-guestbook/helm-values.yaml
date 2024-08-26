@@ -1,1 +1,11 @@
-nextcloud:host: nextcloud.example.comusername: adminpassword: SuperSecretPasswordmariadb:enabled: trueauth:rootPassword: mariadb-root-passwordpassword: mariadb-passworddatabase: nextcloud
+nextcloud:
+  host: nextcloud.example.com
+  username: admin
+  password: SuperSecretPassword
+  
+mariadb:
+  enabled: true
+  auth:
+    rootPassword: mariadb-root-password
+    password: mariadb-password
+    database: nextcloud
