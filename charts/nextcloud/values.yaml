@@ -497,7 +497,7 @@ cronjob:
   #   readOnlyRootFilesystem: true
 
 service:
-  type: NodePort
+  type: ClusterIp
   port: 8080
   loadBalancerIP: ""
   nodePort: 30080
