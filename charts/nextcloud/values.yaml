@@ -500,7 +500,7 @@ cronjob:
 service:
   type: NodePort
   port: 80
-  nodePort: 30080
+  nodePort: 30081
   loadBalancerIP: ""
   annotations: {}
     ## Insert your annotations such as below
