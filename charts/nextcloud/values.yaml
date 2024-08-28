@@ -35,8 +35,8 @@ ingress:
   #    proxy_hide_header X-Powered-By;
   #    rewrite ^/.well-known/webfinger /index.php/.well-known/webfinger last;
   #    rewrite ^/.well-known/nodeinfo /index.php/.well-known/nodeinfo last;
-  #    rewrite ^/.well-known/host-meta /public.php?service=host-meta last;
-  #    rewrite ^/.well-known/host-meta.json /public.php?service=host-meta-json;
+  #    rewrite ^/.well-known/host-meta /public.php?=host-meta last;
+  #    rewrite ^/.well-known/host-meta.json /public.php?=host-meta-json;
   #    location = /.well-known/carddav {
   #      return 301 $scheme://$host/remote.php/dav;
   #    }
@@ -112,7 +112,7 @@ nextcloud:
   ## Primary ObjectStore options
   # see: https://docs.nextcloud.com/server/latest/admin_manual/configuration_files/primary_storage.html#configuring-object-storage-as-primary-storage
   objectStore:
-    # https://docs.nextcloud.com/server/latest/admin_manual/configuration_files/primary_storage.html#simple-storage-service-s3
+    # https://docs.nextcloud.com/server/latest/admin_manual/configuration_files/primary_storage.html#simple-storage--s3
     s3:
       enabled: false
       # ignored if nextcloud.objectstore.s3.existingSecret is not empty string
@@ -172,7 +172,7 @@ nextcloud:
       url: ""
       region: ""
       # optional on some swift implementations
-      service: "swift"
+      : "swift"
       # the container to store the data in
       container: ""
       # autocreate container
@@ -497,10 +497,10 @@ cronjob:
   #   readOnlyRootFilesystem: true
 
 service:
-  type: ClusterIP
+  type: NodePort
   port: 8080
   loadBalancerIP: ""
-  nodePort: nil
+  nodePort: 30080
   annotations: {}
     ## Insert your annotations such as below
     # test/test: pumuckel
